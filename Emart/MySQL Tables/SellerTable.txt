@@ -1,0 +1,19 @@
+   CREATE TABLE Sellers(
+	
+	SellerID varchar(20) NOT NULL,
+	
+	SellerName varchar(20),
+
+	MobileNumber varchar(10),
+
+	Password varchar(10),
+ 
+   	ProductID varchar(20),
+   
+	 BrandName varchar(20),
+	
+	PRIMARY KEY (SellerID),
+  
+ 	 FOREIGN KEY (ProductID) REFERENCES Products(ProductID)
+
+    );

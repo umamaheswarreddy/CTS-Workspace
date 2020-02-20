@@ -1,0 +1,93 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+   
+      <div class="fadeIn first">
+        <img src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" id="icon" alt="User Icon" />
+      </div>
+  
+      <h1 class="ion-text-center">Register</h1>
+  
+          <form [formGroup]="loginForm">
+  
+              <div class="form-group">
+                  <label>User Name*</label>
+                  <input class="form-control" formControlName="uname" type="text"/>
+              </div>
+              <div class="error-messages">
+                  <ng-container *ngFor="let error of error_messages.uname">
+                      <div class="error-message" *ngIf="loginForm.get('uname').hasError(error.type) && (loginForm.get('uname').dirty || loginForm.get('uname').touched)">
+                          {{ error.message }}
+                      </div>
+                  </ng-container>
+              </div>
+              
+              <div class="form-group">
+              <label>Company Name*</label>
+                  <input class="form-control" formControlName="cname" type="text"/>
+              </div>
+              <div class="error-messages">
+                  <ng-container *ngFor="let error of error_messages.cname">
+                      <div class="error-message" *ngIf="loginForm.get('cname').hasError(error.type) && (loginForm.get('cname').dirty || loginForm.get('cname').touched)">
+                          {{ error.message }}
+                      </div>
+                  </ng-container>
+              </div>
+
+              <div class="form-group">
+                <label>GSTIN*</label>
+                    <input class="form-control" formControlName="gst" type="text" maxlength="15"/>
+                </div>
+                <div class="error-messages">
+                    <ng-container *ngFor="let error of error_messages.gst">
+                        <div class="error-message" *ngIf="loginForm.get('gst').hasError(error.type) && (loginForm.get('gst').dirty || loginForm.get('gst').touched)">
+                            {{ error.message }}
+                        </div>
+                    </ng-container>
+                </div>
+
+              <div class="form-group">
+                  <label>Email ID*</label>
+                  <input class="form-control" formControlName="email" type="email" />
+              </div>
+              <div class="error-messages">
+                  <ng-container *ngFor="let error of error_messages.email">
+                      <div class="error-message" *ngIf="loginForm.get('email').hasError(error.type) && 
+      (loginForm.get('email').dirty || loginForm.get('email').touched)">
+                          {{ error.message }}
+                      </div>
+                  </ng-container>
+              </div>
+  
+              <div class="form-group">
+                  <label>Password*</label>
+                  <input class="form-control" formControlName="password" type="password" />
+              </div>
+              <div class="error-messages">
+                  <ng-container *ngFor="let error of error_messages.password">
+                      <div class="error-message" *ngIf="loginForm.get('password').hasError(error.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+                          {{ error.message }}
+                      </div>
+                  </ng-container>
+              </div>
+  
+              <div class="form-group">
+                  <label>Confirm Password*</label>
+                  <input class="form-control" formControlName="confirmpassword" type="password" />
+              </div>
+              <div class="error-messages">
+                  <ng-container *ngFor="let error of error_messages.confirmpassword">
+                      <div class="error-message" *ngIf="loginForm.get('confirmpassword').hasError(error.type) && (loginForm.get('confirmpassword').dirty || loginForm.get('confirmpassword').touched)">
+                          {{ error.message }}
+                      </div>
+                  </ng-container>
+              </div>
+        <pre>
+          Form Error - {{ loginForm.errors | json }}
+        </pre>
+        <button class="form-control btn btn-outline-dark" [disabled]="!loginForm.valid">Signup</button>
+          </form>
+  
+      
+  
+    </div>
+  </div>

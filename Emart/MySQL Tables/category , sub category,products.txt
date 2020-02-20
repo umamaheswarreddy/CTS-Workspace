@@ -1,0 +1,21 @@
+CREATE TABLE Category(categoryId int unsigned PRIMARY KEY, 
+		     categoryName varchar(50) NOT NULL);
+
+
+
+CREATE TABLE Subcategory(subcategoryId int unsigned PRIMARY KEY,
+			subcategoryName varchar(50) NOT NULL,
+			categoryId int unsigned, 
+			categoryName varchar(50));
+
+
+
+CREATE TABLE Products(productId int unsigned PRIMARY KEY, 
+		      price double, 
+		      productName varchar(50) NOT NULL,
+		      pdescription varchar(100),
+		      subcategoryId int,
+		      subcategoryName varchar(50),
+		      categoryId int,
+ 		      categoryName varchar(50),
+		      subcategoryName varchar(50));

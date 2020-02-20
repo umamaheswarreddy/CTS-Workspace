@@ -1,0 +1,13 @@
+CREATE TABLE Buyer(
+
+	CustomerID varchar(20) NOT NULL,
+
+	CustomerName varchar(20),
+
+	ContactDetails varchar(10),
+
+	Password varchar(10),
+
+	PRIMARY KEY (CustomerID)
+
+    );

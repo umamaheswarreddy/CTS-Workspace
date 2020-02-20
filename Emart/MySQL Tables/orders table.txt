@@ -1,0 +1,15 @@
+CREATE TABLE Orders( OrderID varchar(20),
+  
+ 		 OrderDate date NOT NULL,
+ 
+  		 CustomerID varchar(20),
+  
+ 		 DiscountId varchar(10),
+  
+ 	 	DiscountValue long,
+   
+ 		TotalAmount long,
+   
+ 		PRIMARY KEY (OrderID),
+ 
+  		FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID));
